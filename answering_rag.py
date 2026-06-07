@@ -25,8 +25,9 @@ def generate_answer(query, retrieved_docs):
     context = "\n\n".join(retrieved_docs['documents'][0])
     system_prompt = (
         f"You are a biology tutor for class 7-8 students. "
-        f"Answer the following question using only the context provided below and elaborately.\n\n"
+        f"Answer the following question using only the context provided below in a single paragraph\n\n"
         f"Additionally, try to cite the page numbers from the chunks for reference"
+        f"Assume that you are explaining to a 10 year old student. Avoid using excessive complicated jargons."
         f"Question: {query}\n\n"
         f"Context:\n{context}\n\n"
         f"If the answer is not present in the context, say: "
